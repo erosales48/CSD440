@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="style.css"
     </head>
     <header>
-        <h1>The Table of random numbers</h1>
+        <h1>The Table of Random Numbers</h1>
     </header>
     <body>
         <hr />
