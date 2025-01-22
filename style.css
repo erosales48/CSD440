@@ -1,7 +1,7 @@
 /*
    Edgar D Rosales
    CSD440 Server-Side Scripting
-   16 Jan 2025
+   22 Jan 2025
 
    CSS Stylesheet for general purpose.
 
@@ -22,7 +22,7 @@ body {
     background-color: lightgray;
 }
 hr {
-    border: 1px solid black;
+    border: 2px solid black;
 }
 h1 {
     text-align: center;
@@ -31,12 +31,16 @@ h1 {
 table {
     width: 50%;
     border-collapse: collapse;
-    margin: 20px auto;
+    margin: 10px auto;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: ghostwhite;
 }
 
 th, td {
     border: 2px solid black;
-    padding: 10px;
+    padding: 7px;
     text-align: center;
     border-collapse: collapse;
 }
@@ -45,9 +49,15 @@ th {
     color: ghostwhite;
     font-size: 20px;
     font-weight: bold;
-    border-radius: 10px;
     padding: 10px;
 }
 tr:nth-child(even) {
     background-color: #f2f2f2;
+}
+
+.no-border {
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
 }
