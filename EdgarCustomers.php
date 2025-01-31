@@ -29,14 +29,14 @@ CSD440 Server-Side SScripting
         new Customer('Hannibal', 'Lecter', 55, '(212) 555-0163'),
         new Customer('Indiana', 'Jones', 40, '(415) 555-0124'),
         new Customer('Jack', 'Sparrow', 35, '(305) 555-0155'),
-        new Customer('Neo', 'Anderson', 33, '(617) 555-0186'),
+        new Customer('Neo', 'Anderson', 25, '(617) 555-0186'),
         new Customer('Elsa', 'Frozen', 21, '(303) 555-0107')
      ];
 
     // Function to Display all Customers in a Table
     function displayAllCustomers($customers) {
         echo "<h2>List ALL Customers</h2>";
-        echo "<table style='border: 1px; border-collapse: collapse; cell-spacing: 10;'>";
+        echo "<table style='border: 1px; border-collapse: collapse;'>";
         echo "<tr><th>First Name</th><th>Last Name</th><th>Age</th><th>Phone</th></tr>";
         foreach($customers as $customer) {
             echo "<tr>";
