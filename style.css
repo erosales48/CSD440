@@ -24,7 +24,7 @@ body {
 hr {
     border: 2px solid black;
 }
-h1 {
+h1, h2 {
     text-align: center;
 }
 
@@ -45,7 +45,7 @@ th, td {
     border-collapse: collapse;
 }
 th {
-    background-color: #a0d3e8;
+    background-color: #9090df;
     color: ghostwhite;
     font-size: 20px;
     font-weight: bold;
@@ -60,4 +60,30 @@ tr:nth-child(even) {
     padding: 0;
     margin: 0;
     font-size: 15px;
+}
+
+.side-by-side {
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+    margin: 10px auto;
+
+}
+
+.right {
+    font-family: "Open Sans", "DejaVu Sans", sans, sans-serif;
+    width: 45%;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: ghostwhite;
+}
+
+.left {
+    font-family: "Consolas", "Menlo", "Courier", monospace;
+    width: 45%;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #a0d3e8;
 }
