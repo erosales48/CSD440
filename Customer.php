@@ -1,5 +1,11 @@
-<?php
+<!--
+***** Customer.php *****
+Edgar D Rosales
+CSD440 Server-Side SScripting
+31 Jan 2025
+-->
 
+<?php
 class Customer {
     private $firstName;
     private $lastName;
