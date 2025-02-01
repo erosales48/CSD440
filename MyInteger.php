@@ -39,25 +39,22 @@ class MyInteger {
         return $this->myDigit % 2 != 0;
     }
 
-    public function isPrime($number) {
-        if ($number < 2) {
+    public function isPrime() {
+        if ($this->myDigit < 2) {
             return false;
         }
-        if ($number == 2) {
+        if ($this->myDigit == 2) {
             return true;
         }
-        for ($i = 2; $i <= sqrt($number); $i++) {
-            if ($number % $i == 0) {
+        for ($i = 2; $i <= sqrt($this->myDigit); $i++) {
+            if ($this->myDigit % $i == 0) {
                 return false;
             }
         }
         return true;
     }
     public function __toString() {
-        return "{$this->myDigit} ";
-    }
-    public function display() {
-        echo $this->__toString();
+        return "$this->myDigit ";
     }
 }
 

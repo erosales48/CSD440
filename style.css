@@ -30,7 +30,7 @@ h1, h2 {
 }
 
 table {
-    width: 50%;
+    width: 75%;
     border-collapse: collapse;
     margin: 10px auto;
     border: 2px solid black;
@@ -40,6 +40,9 @@ table {
 }
 
 th, td {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "Consolas", "Menlo", "Courier", monospace;
     border: 2px solid black;
     padding: 7px;
     text-align: center;
@@ -54,6 +57,14 @@ th {
 }
 tr:nth-child(even) {
     background-color: #f2f2f2;
+}
+
+td:first-child {
+    font-family: "Open Sans", "DejaVu Sans", sans, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    padding: 10px;
 }
 
 .no-border {
