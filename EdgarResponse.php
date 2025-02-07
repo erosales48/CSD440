@@ -128,9 +128,13 @@
     echo "<h2>Age: " . htmlspecialchars($_POST['age']) . "</h2>";
     echo "<h2>Email: " . htmlspecialchars($_POST['email']) . "</h2>";
     echo "<h2>Phone: " . htmlspecialchars($_POST['phone']) . "</h2>";
-    echo "<h2>You are: ";
-    foreach ($_POST['checkBox_1'] as $value) {
-        echo htmlspecialchars($value) . " ";
+    if (!empty($_POST['checkBox_1'])) {
+        echo "<h2>You are: ";
+        foreach ($_POST['checkBox_1'] as $value) {
+            echo htmlspecialchars($value) . " ";
+        }
+    } else {
+        echo "<h2>You are: No Answer</h2>";
     }
     echo "</h2>";
     echo "<h2>Sex: " . htmlspecialchars($radioButton) . "</h2>";
