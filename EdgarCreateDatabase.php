@@ -18,6 +18,21 @@
     **** This File is to create the initial database and user for the assigned programs to run ****
 -->
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Edgar's Form</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Create Database and User</h1>
+</header>
+
+
 <?php
 // Database configurations
 $servername = "localhost";
@@ -35,60 +50,66 @@ if ($conn->connect_error) {
 // Drop database if it exists
 $sql = "DROP DATABASE IF EXISTS baseball_01";
 if ($conn->query($sql) === TRUE) {
-    echo "Database dropped successfully<br />";
+    echo "<p>Database dropped successfully</p>";
 }
 
 // Create database
 $sql = "CREATE DATABASE baseball_01";
 if ($conn->query($sql) === TRUE) {
-    echo "Database created successfully<br />";
+    echo "<p>Database created successfully</p>";
 } else {
-    echo "Error creating database: " . $conn->error . "<br />";
+    echo "<p>Error creating database: " . $conn->error . "</p>";
 }
 
 // Drop user if it exists
 $sql = "DROP USER IF EXISTS 'student1'@'localhost'";
 if ($conn->query($sql) === TRUE) {
-    echo "User dropped successfully\n";
+    echo "<p>User dropped successfully</p>";
 }
 
 // Create user and grant privileges
 $sql = "CREATE USER 'student1'@'localhost' IDENTIFIED BY 'pass'";
 if ($conn->query($sql) === TRUE) {
-    echo "User created successfully<br />";
+    echo "<p>User created successfully</p>";
 } else {
-    echo "Error creating user: " . $conn->error . "<br />";
+    echo "<p>Error creating user: " . $conn->error . "</p>";
 }
 
 $sql = "GRANT ALL PRIVILEGES ON baseball_01.* TO 'student1'@'localhost'";
 if ($conn->query($sql) === TRUE) {
-    echo "Granted all privileges to user on database<br />";
+    echo "<h4>Granted all privileges to user on database</h4>";
 } else {
-    echo "Error granting privileges: " . $conn->error . "<br />";
+    echo "<h4>Error granting privileges: " . $conn->error . "</h4>";
 }
 
 // Flush privileges
 $sql = "FLUSH PRIVILEGES";
 if ($conn->query($sql) === TRUE) {
-    echo "Privileges flushed<br />";
+    echo "<p>Privileges flushed</p>";
 } else {
-    echo "Error flushing privileges: " . $conn->error . "<br />";
+    echo "<p>Error flushing privileges: " . $conn->error . "</p>";
 }
 echo "<br />";
+echo "<hr />";
+echo "<br />";
+echo "<h3>User information:</h3>";
 $sql = "SHOW GRANTS FOR 'student1'@'localhost'";
 $result = $conn->query($sql);
-echo "User privileges:<br />";
+echo "<h4>student1 privileges:</h4>";
 while ($row = $result->fetch_array()) {
     echo $row[0] . "<br />";
 }
 echo "<br />";
 $sql = "SHOW DATABASES";
 $result = $conn->query($sql);
-echo "Databases:<br />";
+echo "<h3>Databases:</h3>";
+echo "<ul>";
 while ($row = $result->fetch_array()) {
-    echo $row[0] . "<br />";
+    echo "<li>" . $row[0] . "</li>";
 }
 
 // Close connection
 $conn->close();
 ?>
+</body>
+</html>

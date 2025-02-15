@@ -1,5 +1,5 @@
 <!--
-    ***** EdgarCreateTable.php *****
+    ***** EdgarQueryTable.php *****
 
     Edgar Rosales
     CSD440 Server-Side Scripting
@@ -14,18 +14,13 @@
             Drop your table
             Populate your table
           >>Query to test your table<<
-
 -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Edgar's Form</title>
+    <title>Query Table</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
         body {
             background-color: #1e1e2f;
@@ -36,7 +31,7 @@
         }
 
         header {
-            background: linear-gradient(90deg, #6a11cb, #2575fc);
+            background: linear-gradient(90deg, #2C3930, #3F4F44);
             font-size: 28px;
             text-align: center;
             padding: 30px;
@@ -51,6 +46,7 @@
             font-size: 24px;
             margin-top: 20px;
             margin-bottom: 20px;
+            color: red;
         }
 
         table {
@@ -60,7 +56,7 @@
             border-radius: 10px;
             padding: 5px;
             margin: 100px auto 10px;
-            background-color: #6a11cb;
+            background-color: #A27B5C;
         }
 
         th, td {
@@ -74,7 +70,7 @@
         }
 
         th {
-            background-color: #9090df;
+            background-color: #3F4F44;
             color: #f2f2f2;
             font-size: 20px;
             font-weight: bold;
@@ -82,42 +78,36 @@
         }
 
         tr:nth-child(even) {
-            background-color: #2575fc;
+            background-color: #F0F0D7;
+            color: #000000;
         }
 
-        td:first-child {
-            font-family: "Open Sans", "DejaVu Sans", sans, sans-serif;
-            font-size: 20px;
-            font-weight: bold;
+        footer {
             text-align: center;
-            padding: 10px;
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
 <header>
     <h1>Battlemech Inventory</h1>
+    <h3>by Year First Produced</h3>
 </header>
-
 <?php
 $db = new mysqli('localhost', 'student1', 'pass', 'baseball_01');
-
 if ($db->connect_error) {
-    die("Connection failed: " . $db->connect_error);
+    die("<h2>Connection failed: " . $db->connect_error . "</h2>");
 }
-
 $sql = "SELECT mech_id, mech_name, model, weight_class, 
                    top_speed, armor, production_year 
             FROM baseball_01.battlemechs
-            ORDER BY production_year DESC, mech_name";
-
+            ORDER BY production_year, mech_name";
 $result = $db->query($sql);
-
 if (!$result) {
-    die("Query failed: " . $db->error);
+    die("<h2>Query failed: " . $db->error . "</h2>");
 }
-
-
 echo "<table>";
 echo "<tr>
             <th>ID</th>
@@ -128,7 +118,6 @@ echo "<tr>
             <th>Armor</th>
             <th>Year</th>
           </tr>";
-
 while ($row = $result->fetch_assoc()) {
     echo "<tr>";
     echo "<td>{$row['mech_id']}</td>";
@@ -140,11 +129,14 @@ while ($row = $result->fetch_assoc()) {
     echo "<td>{$row['production_year']}</td>";
     echo "</tr>";
 }
-
 echo "</table>";
-
 $result->free();
 $db->close();
 ?>
+<footer>
+    <form action="EdgarDropTable.php">
+        <input type="submit" value="Drop Table">
+    </form>
+</footer>
 </body>
 </html>
