@@ -77,7 +77,22 @@ $mechs = [
     ['Jenner', 'JR7-D', 'Light', 97.6, 80, 3025],
     ['Warhammer', 'WHM-6R', 'Heavy', 53.4, 304, 2776],
     ['Raven', 'RVN-3L', 'Light', 86.0, 120, 3048],
-    ['Marauder', 'MAD-3R', 'Heavy', 64.0, 304, 2740]
+    ['Marauder', 'MAD-3R', 'Heavy', 64.0, 304, 2740],
+    ['Crusader', 'CRD-3R', 'Heavy', 55.0, 320, 2755],
+    ['Centurion', 'CN9-A', 'Medium', 70.0, 240, 2750],
+    ['Shadow Hawk', 'SHD-2H', 'Medium', 64.2, 200, 2750],
+    ['Griffin', 'GRF-1N', 'Medium', 66.5, 210, 2766],
+    ['Hunchback', 'HBK-4G', 'Medium', 61.0, 240, 2750],
+    ['Kintaro', 'KTO-18', 'Medium', 67.5, 260, 2780],
+    ['Phoenix Hawk', 'PXH-1', 'Medium', 76.0, 210, 2780],
+    ['Goliath', 'GOL-2', 'Assault', 52.0, 600, 3050],
+    ['Banshee', 'BNC-3E', 'Assault', 50.0, 400, 2760],
+    ['Vulcan', 'VUL-1', 'Medium', 84.0, 80, 2760],
+    ['Scorpion', 'SCP-1N', 'Light', 95.0, 75, 3049],
+    ['Locust', 'LCT-1V', 'Light', 108.0, 50, 3025],
+    ['Thunderbolt', 'TDR-5S', 'Heavy', 70.0, 280, 2766],
+    ['Quickdraw', 'QKD-4G', 'Medium', 67.5, 240, 2766],
+    ['Wolverine', 'WLN-6R', 'Medium', 69.0, 210, 2780]
 ];
 $stmt = $db->prepare("INSERT INTO baseball_01.battlemechs 
             (mech_name, model, weight_class, top_speed, armor, production_year)

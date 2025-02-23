@@ -1,0 +1,157 @@
+/*
+    ***** btStyle.css *****
+
+    Edgar Rosales
+    CSD440 Server-Side Scripting
+    21 Feb 2025
+
+    1. For this assignment, the database you will use is the one created in module 8.
+       Using MySQLi, write PHP programs (3 files) that provide:
+            - index page with links to all following PHPs
+            - Query page to search based on user form input
+            - Form page for adding record
+            - include all files from Module 8
+
+    2. All pages need to be well formatted in their display.
+    3. Similar to previous modules, title all files starting with your first name such as
+       <YourFirstName>Query.php or <YourFirstName>Forms.php, etc.
+    4. Review the code documentation requirements and ensure you meet them all in your code.
+    5. Thoroughly test your code to verify it functions correctly and displays correct output.
+ */
+
+header {
+    background: linear-gradient(90deg, #2C3930, #3F4F44);
+    font-size: 28px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 860px;
+    margin: 20px auto;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    color: #f04124;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    text-align: center;
+}
+
+.btMenu {
+    padding: 10px;
+    border-radius: 10px;
+    margin: 20px auto 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+}
+
+.btLinks {
+    display: flex;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    margin: 20px auto;
+    justify-content: center;
+    gap: 40px;
+}
+
+.btLinks input {
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Consolas", "Menlo", "Courier", monospace;
+    background-color: #2C3930;
+    color: gray;
+}
+
+.btLinks input:hover {
+    background-color: #3F4F44;
+    color: #f04124;
+    text-transform: uppercase;
+}
+
+.addMech, .result, .searchForm {
+    display: flex;
+    width: 100%;
+    max-width: 860px;
+    color: #f04124;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 20px auto;
+    padding: 10px;
+    line-height: 40px;
+}
+
+.addMech input {
+    width: 300px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: "Consolas", "Menlo", "Courier", monospace;
+    background-color: gray;
+    color: #2C3930;
+    padding: 5px;
+}
+
+.addMechButton {
+    display: flex;
+    justify-content: center;
+    margin: 40px auto;
+    max-width: 160px;
+}
+
+.result {
+    font-size: 15px;
+    color: #21f024;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 40px auto;
+    color: #f04124;
+}
+
+table {
+    width: 75%;
+    border-collapse: collapse;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 20px auto 10px;
+    background-color: #A27B5C;
+}
+
+th, td {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "Consolas", "Menlo", "Courier", monospace;
+    border: 2px solid black;
+    padding: 7px;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #3F4F44;
+    color: #f2f2f2;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+tr:nth-child(even) {
+    background-color: #F0F0D7;
+    color: #000000;
+}
+
+Footer {
+    font-size: 11px;
+    color: cornflowerblue;
+}
