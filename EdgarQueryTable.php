@@ -21,6 +21,11 @@
     <title>Query Table</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        function getPDF() {
+            window.open("EdgarToPDF.php");
+        }
+    </script>
     <style>
         body {
             background-color: #1e1e2f;
@@ -83,7 +88,11 @@
         }
 
         footer {
+            display: flex;
+            justify-content: center;
             text-align: center;
+            flex-direction: row;
+            gap: 20px;
             font-size: 18px;
             margin-top: 20px;
             margin-bottom: 20px;
@@ -136,6 +145,10 @@ $db->close();
 <footer>
     <form action="EdgarDropTable.php">
         <input type="submit" value="Drop Table">
+    </form>
+    <button onclick="getPDF();">PDF</button>
+    <form action="EdgarQueryRecord.php">
+        <input type="submit" value="Query Record">
     </form>
 </footer>
 </body>
