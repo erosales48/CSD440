@@ -1,3 +1,19 @@
+<!--
+    ***** EdgarQueryTable.php *****
+
+    Edgar Rosales
+    CSD440 Server-Side Scripting
+    03 Mar 2025
+
+    1. Create a PDF holding all of your database data from Module 8.
+    2. In the PDF, display general information about the topic related to the data,
+       and then display the data in a table format.
+    3. Include in your data table a header and footer.
+    4. Title all files starting with your first name such as <YourFirstName> PDF.php.
+    5. Review the code documentation requirements and ensure you meet them in your code.
+    6. Thoroughly test your code to verify it functions correctly and displays the correct output.
+-->
+
 <?php
 require('../fpdf/fpdf.php');
 
@@ -56,6 +72,10 @@ if ($result->num_rows > 0) {
         $fill = !$fill;
     }
 }
+$pdf->Ln(10);
+$pdf->Cell(0, 10, 'End of Table', 0, 1, 'C');
+
+$result->free();
 $db->close();
 $pdf->Output();
 
